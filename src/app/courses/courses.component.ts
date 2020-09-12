@@ -8,8 +8,11 @@ import { Course } from '../modules/course.model';
 })
 export class CoursesComponent implements OnInit {
   coursesArr: Course[];
+  course: Course;
   constructor() { }
    
+
+  
 
   ngOnInit(): void {
     this.coursesArr = [
@@ -32,5 +35,15 @@ export class CoursesComponent implements OnInit {
         availability: true
       }
     ];
+    this.course={
+      title:'',
+      availability:true
+    }
+  }
+  onClick(args){
+    console.log("add");
+    console.log(this.course);
+    const course = {...this.course};
+    this.coursesArr.push(course);
   }
 }

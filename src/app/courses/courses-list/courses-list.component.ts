@@ -8,10 +8,11 @@ import { Course } from 'src/app/modules/course.model';
 export class CoursesListComponent implements OnInit {
 
   @Input() courses:Course[];
+  
 
   constructor() { }
 
   ngOnInit(): void {
+ 
   }
-
 }
