@@ -35,20 +35,21 @@ export class CoursesComponent implements OnInit {
         availability: true
       }
     ];
+    this.sortCourses(this.coursesArr);
     this.resetForm();
   }
   onClick() : void{
     const course = {...this.course};
-    const courses = {...this.coursesArr};
+    const courses = [...this.coursesArr];
     if(!course.id){
       courses.push({...course, id: courses.length + 1});
     }else{
-      const courseIndex = ccourses.findIndex(el => +el.id === +this.course.id);
+      const courseIndex = courses.findIndex(el => +el.id === +this.course.id);
       courses.splice(courseIndex, 1, course);
     }
     this.coursesArr = courses;
-    this.resetForm();
-    
+    this.sortCourses(this.coursesArr);
+    this.resetForm(); 
   }
 
   resetForm() : void{
@@ -56,6 +57,10 @@ export class CoursesComponent implements OnInit {
       title: '',
       availability: false
     }
+  }
+
+  sortCourses(courses:Course[]) : void{
+    courses.sort((a, b) => a.title.localeCompare(b.title));
   }
 
   onEditEvent(course : Course) : void {

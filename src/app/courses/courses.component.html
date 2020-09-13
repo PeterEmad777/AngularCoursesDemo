@@ -13,5 +13,13 @@
     
         </div>
     </div>
-    <app-courses-list [courses]='coursesArr' (editEvent)="onEditEvent($event)"></app-courses-list>
+
+
+    <div class="row"> 
+        <app-courses-list [courses]='coursesArr' (editEvent)="onEditEvent($event)"></app-courses-list>
+    </div>
+    <div class="row"> 
+        <app-course-details></app-course-details>
+    </div>
+    
 </div>
