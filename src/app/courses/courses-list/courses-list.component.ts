@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { Course } from 'src/app/modules/course.model';
+import { CoursesService } from 'src/app/service/courses.service';
 
 @Component({
   selector: 'app-courses-list',
@@ -12,11 +13,14 @@ export class CoursesListComponent implements OnInit {
   @Output() editEvent = new EventEmitter<Course>();
   
 
-  constructor() { }
+  constructor(private courseService: CoursesService) {
+
+   }
 
   ngOnInit(): void { }
 
   onEdit(course): void {
     this.editEvent.emit({...course});
+    this.courseService.changeCourseData({...course});
   }
 }

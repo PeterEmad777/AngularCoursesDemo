@@ -64,7 +64,6 @@ export class CoursesComponent implements OnInit {
   }
 
   onEditEvent(course : Course) : void {
-    console.log(course);
     this.course = course;
   }
 }
