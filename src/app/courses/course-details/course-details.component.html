@@ -1,1 +1,13 @@
-<p>course-details works!</p>
+<h3>
+    Course Details:
+</h3>
+<div *ngIf="course">
+    ID: #{{course.id}}
+    <br>
+    Title: {{course.title}}
+    <br>
+    isAvailable: {{course.availability}}
+</div>
+<div class="alert-warning" *ngIf="!course">
+    No Course Data!
+</div>
