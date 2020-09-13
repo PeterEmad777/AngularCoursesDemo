@@ -8,15 +8,15 @@ import { Course } from 'src/app/modules/course.model';
 })
 export class CoursesListComponent implements OnInit {
 
-  @Input() courses:Course[];
-  @Output()editEvent = new EventEmitter<Course>()
+  @Input() courses : Course[];
+  @Output() editEvent = new EventEmitter<Course>();
   
 
   constructor() { }
 
   ngOnInit(): void { }
 
-  onEdit(course : Course): void {
+  onEdit(course): void {
     this.editEvent.emit({...course});
   }
 }

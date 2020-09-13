@@ -35,19 +35,15 @@ export class CoursesComponent implements OnInit {
         availability: true
       }
     ];
-    this.course={
-      title:'',
-      availability:true
-    }
+    this.resetForm();
   }
-  onClick(){
+  onClick() : void{
     const course = {...this.course};
     const courses = {...this.coursesArr};
     if(!course.id){
-      this.coursesArr.push({...course, id: courses.length + 1});
+      courses.push({...course, id: courses.length + 1});
     }else{
-      console.log(courses.findIndex(el => el.id === this.course.id));
-      const courseIndex = courses.findIndex(el => el.id === this.course.id);
+      const courseIndex = ccourses.findIndex(el => +el.id === +this.course.id);
       courses.splice(courseIndex, 1, course);
     }
     this.coursesArr = courses;
