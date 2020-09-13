@@ -3,8 +3,10 @@
 </h3>
 <hr>
 <ul class="list-group">
-    <app-course-item *ngFor="let course of courses" [course]='course'>
-
-    </app-course-item>
+    <li *ngFor="let course of courses" class="list-group-item" [ngClass]="{'list-group-item-success' : course.availability,
+        'list-group-item-danger' : !course.availability}"
+        (click)="onEdit(course)">
+        Title: {{course.title}}
+    </li>
 </ul>
 

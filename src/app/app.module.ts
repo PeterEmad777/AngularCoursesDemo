@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { CourseItemComponent } from './courses/course-item/course-item.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     CoursesComponent,
     CoursesListComponent,
-    CourseItemComponent,
   ],
   imports: [
     BrowserModule,

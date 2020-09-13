@@ -8,10 +8,10 @@
             <div class="col-sm-6">
                 <input type="text" name='course' id="course" class="form-control" placeholder="Course Title" [(ngModel)]="course.title">
                 <input type="checkbox" class="form-control-check" [(ngModel)]="course.availability">
-                <button type="button" class="form-control btn" (click)='onClick($event)'>Add</button>
+                <button type="button" class="form-control btn" (click)='onClick()'> {{course.id ? 'Edit' : 'Add'}} </button>
             </div>
     
         </div>
     </div>
-    <app-courses-list [courses]='coursesArr'></app-courses-list>
+    <app-courses-list [courses]='coursesArr' (editEvent)="onEditEvent($event)"></app-courses-list>
 </div>
